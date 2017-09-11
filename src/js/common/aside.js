@@ -11,11 +11,11 @@ $('#monitar').text(user.tc_name);
 $('.navs a').on('click', function () {
     $(this).next('ul').slideToggle();
 });
-
-// 页面跳转
 var path=location.pathname;
-$(".nav a").removeClass("active");
-$('nav a[href="'+path+'"]').addClass("active").parent("ul").show();
+$(".navs a").removeClass("active");
+$('.navs a[href="'+path+'"]').addClass("active").parents("ul").show();
+// 页面跳转
+
 
 //用户信息的展示通过首页测试就可以，导航下拉列表显示隐藏通过首页测试可以，焦点位置
 //除了首页测试，还得通过另外一个子元素

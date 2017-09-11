@@ -1,3 +1,6 @@
+var stor=JSON.parse(localStorage.getItem("userInfo")).tc_avatar||'/images/default.png';
+$(".avatar img").attr('src',stor);
+
 $("#login-form").ajaxForm({
     success:function (data) {
         if(data.code==200){
