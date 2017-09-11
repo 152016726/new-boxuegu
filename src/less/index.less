@@ -1,7 +1,28 @@
 
 @import 'base.less';
-@import 'variable.less';
-@import 'mixin.less';
+
+.border-radius (@radius) {
+    border-radius: @radius;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100px;
+        margin: -80px 0 0 -50px;
+    }
+}
 
 // 侧边栏
 .aside {
@@ -96,6 +117,19 @@
             .border-radius(0);
         }
 
+        .navbar-header {
+        	float: left;
+        }
+
+		.navbar-right {
+            float: right!important;
+			margin-right: -15px;
+
+			li {
+				float: left;
+			}
+		}
+
         .navbar-brand {
             height: auto;
             line-height: 1;
@@ -131,6 +165,13 @@
     
     // 主体
     .body {
+
+		.form-inline .form-control {
+			display: inline-block;
+			width: auto;
+			vertical-align: middle;
+		}
+
         // 面包屑
         .breadcrumb {
             background-color: #FFF;
@@ -861,11 +902,12 @@
             border-radius: 50%;
             box-shadow: 0 1px 5px #CCC;
             background-color: pink;
+            overflow: hidden;
         }
     }
 }
 
-#lesson {
+#chapterModal {
 
     label {
         color: #666;
@@ -899,7 +941,6 @@
         padding: 15px 10px;
     }
 }
-
 
 
 

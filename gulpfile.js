@@ -10,16 +10,6 @@ var buffer = require('vinyl-buffer');
 var concat=require('gulp-concat');
 var htmlReplace=require('gulp-html-replace');
 
-gulp.task('htmlmin',function () {
-    gulp.src(['./src/**/*.html','index.html'])
-        .pipe(htmlmin({
-            collapseWhitespace: true, // 去掉空白字符
-            minifyJS: true,//压缩页面JS
-            minifyCSS: true,//压缩页面CSS
-            removeComments: true//清除HTML注释
-        }))
-        .pipe(gulp.dest('./dist'));
-});
 gulp.task('less',function () {
     gulp.src('./src/less/*.less')
         .pipe(less())
@@ -37,8 +27,8 @@ gulp.task('uglify',function () {
 gulp.task('html',function () {
     gulp.src(['src/**/*.html','src/index.html'])
         .pipe(htmlReplace({
-            add:gulp.src('src/html/common/add.html'),
-            aside:gulp.src('src/html/common/side.html'),
+            style:gulp.src('src/html/common/style.html'),
+            aside:gulp.src('src/html/common/aside.html'),
             header:gulp.src('src/html/common/header.html')
         }))
         .pipe(htmlmin({
@@ -47,7 +37,7 @@ gulp.task('html',function () {
             minifyCSS: true,//压缩页面CSS
             removeComments: true//清除HTML注释
         }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('dist'));
 
     gulp.src('dist/index.html')
         .pipe(gulp.dest('./'));
@@ -55,7 +45,7 @@ gulp.task('html',function () {
 
 //包装第三方插件
 var jsLibs = [
-    'node_modules/art-template/lib/temlate-web.js',
+    'node_modules/art-template/lib/template-web.js',
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/bootstrap/dist/js/bootstrap.min.js',
     'node_modules/jquery-form/dist/jquery.form.min.js',
@@ -109,7 +99,7 @@ gulp.task('js',function () {
 });
 //添加统一打包的任务
 gulp.task('build',function () {
-    gulp.run(['htmlmin','less','js','jsLib','html','uglify']);
+    gulp.run(['less','js','jsLib','html','uglify']);
 });
 //添加默认追踪的任务
-gulp.task('default',['htmlmin','html','uglify','less','js','jsLib']);
+gulp.task('default',['html','uglify','less','js','jsLib']);

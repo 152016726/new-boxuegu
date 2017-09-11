@@ -1,9 +1,8 @@
 // 返回登录页
-$("#backend").on("click",function () {
+$("#btn-logout").on("click",function () {
     $.ajax({
         type:'post',
         url:'/v6/logout',
-        dataType:'json',
         success:function (result) {
             console.log(result);
             if(result.code=='200'){

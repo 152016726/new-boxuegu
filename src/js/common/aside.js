@@ -4,7 +4,6 @@
 
 // 头像信息展示
 var user=JSON.parse(localStorage.getItem('userInfo'));
-console.log(user);
 $('#avatar').attr('src',user.tc_avatar);
 $('#monitar').text(user.tc_name);
 

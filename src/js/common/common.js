@@ -1,8 +1,2 @@
-
-	NProgress.start();
-
-	NProgress.done();
-
-	$('.navs ul').prev('a').on('click', function () {
-		$(this).next().slideToggle();
-	});
+require('aside.js');
+require('header.js');
