@@ -1,4 +1,4 @@
-var stor=JSON.parse(localStorage.getItem("userInfo")).tc_avatar||'/images/default.png';
+var stor=localStorage.getItem("userInfo")==null?'/images/default.png':JSON.parse(localStorage.getItem("userInfo")).tc_avatar;
 $(".avatar img").attr('src',stor);
 
 $("#login-form").ajaxForm({

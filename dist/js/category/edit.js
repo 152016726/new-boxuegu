@@ -25,9 +25,10 @@ $(".form-horizontal").ajaxForm({
 // -$(“nav a[href=”’+path+’”]”).addclass(“active”).parent().show();
 
 // 头像信息展示
-var user=JSON.parse(localStorage.getItem('userInfo'));
-$('#avatar').attr('src',user.tc_avatar);
-$('#monitar').text(user.tc_name);
+var user=JSON.parse(localStorage.getItem('userInfo'))!=null?JSON.parse(localStorage.getItem('userInfo')).avatar:'';
+var tc_names=localStorage.getItem('userInfo')!=null?JSON.parse(localStorage.getItem('userInfo')).tc_name:'';
+$('#avatar').attr('src',user);
+$('#monitar').text(tc_names);
 
 // 下拉列表
 $('.navs a').on('click', function () {
@@ -74,7 +75,6 @@ function getSearch(key){
     return key?searchObj[key]:searchObj;
 }
 
-// var cg_id=getSearch('cg_id');
 //暴露数据给其他版块公用
 module.exports = getSearch;
 

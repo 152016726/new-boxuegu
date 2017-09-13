@@ -12,9 +12,10 @@ $.get('/v6/category',function (data) {
 // -$(“nav a[href=”’+path+’”]”).addclass(“active”).parent().show();
 
 // 头像信息展示
-var user=JSON.parse(localStorage.getItem('userInfo'));
-$('#avatar').attr('src',user.tc_avatar);
-$('#monitar').text(user.tc_name);
+var user=JSON.parse(localStorage.getItem('userInfo'))!=null?JSON.parse(localStorage.getItem('userInfo')).avatar:'';
+var tc_names=localStorage.getItem('userInfo')!=null?JSON.parse(localStorage.getItem('userInfo')).tc_name:'';
+$('#avatar').attr('src',user);
+$('#monitar').text(tc_names);
 
 // 下拉列表
 $('.navs a').on('click', function () {

@@ -24,7 +24,7 @@
 <!-- 讲师个人信息模版 -->
 <script id="teacher-profile-tpl" type="text/tpl">
         <div class="settings">
-            <form action="/v6/teacher/modify" method="get" id="teacher-profile-form" class="form-horizontal">
+            <form action="/v6/teacher/modify" method="get" enctype="multipart/form-data" id="teacher-profile-form" class="form-horizontal">
             <input type="hidden" name="tc_id" value="{{tc_id}}" >
                 <div class="form-group">
                     <label for="" class="col-xs-3 control-label">姓名</label>

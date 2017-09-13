@@ -83,7 +83,7 @@ var jsModules=[
     //学科分类
     'src/js/category/add.js',
     'src/js/category/edit.js',
-    'src/js/category/list.js'
+    'src/js/category/list.js',
 ]
 gulp.task('js',function () {
     jsModules.forEach(function (jspath) {
