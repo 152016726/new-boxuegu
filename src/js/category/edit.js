@@ -1,5 +1,7 @@
 require('../common/aside.js');
 require('../common/header.js');
+require('../common/common.js');
+require('../common/loading.js');
 var cg_id=require('../common/util.js');
 console.log(cg_id);
 //获取课程列表回显

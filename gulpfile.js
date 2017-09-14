@@ -29,7 +29,9 @@ gulp.task('html',function () {
         .pipe(htmlReplace({
             style:gulp.src('src/html/common/style.html'),
             aside:gulp.src('src/html/common/aside.html'),
-            header:gulp.src('src/html/common/header.html')
+            header:gulp.src('src/html/common/header.html'),
+            courseEditHeader:gulp.src('src/html/common/course/header.html'),
+            courseEditAside:gulp.src('src/html/common/course/aside.html')
         }))
         .pipe(htmlmin({
             collapseWhitespace: true, // 去掉空白字符
@@ -50,6 +52,8 @@ var jsLibs = [
     'node_modules/bootstrap/dist/js/bootstrap.min.js',
     'node_modules/jquery-form/dist/jquery.form.min.js',
     "./node_modules/echarts/dist/echarts.min.js",
+    "./node_modules/nprogress/nprogress.js",
+    "./node_modules/jquery.cookie/jquery.cookie.js",
     "./node_modules/nprogress/nprogress.js"
 ];
 //合并第三方插件为一个
@@ -83,7 +87,7 @@ var jsModules=[
     //学科分类
     'src/js/category/add.js',
     'src/js/category/edit.js',
-    'src/js/category/list.js',
+    'src/js/category/list.js'
 ]
 gulp.task('js',function () {
     jsModules.forEach(function (jspath) {

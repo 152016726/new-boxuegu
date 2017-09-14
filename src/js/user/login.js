@@ -1,4 +1,9 @@
-var stor=localStorage.getItem("userInfo")==null?'/images/default.png':JSON.parse(localStorage.getItem("userInfo")).tc_avatar;
+
+require('../common/aside.js');
+require('../common/header.js');
+require('../common/common.js');
+require('../common/loading.js');
+var stor=localStorage.getItem("userInfo")?JSON.parse(localStorage.getItem("userInfo")).tc_avatar:'/images/default.png';
 $(".avatar img").attr('src',stor);
 
 $("#login-form").ajaxForm({
@@ -17,7 +22,8 @@ $("#login-form").ajaxForm({
     error:function () {
         alert('登录失败');
     }
-})
+});
+
 
 
 //jquery中阻止页面默认事件如跳转，用return false即可;

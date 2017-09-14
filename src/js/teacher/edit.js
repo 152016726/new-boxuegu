@@ -1,5 +1,7 @@
 require('../common/aside.js');
 require('../common/header.js');
+require('../common/common.js');
+require('../common/loading.js');
 var getSearch=require('../common/util.js');
 //导入列表
 $.get('/v6/teacher/edit',{tc_id:getSearch('tc_id')},function (data) {

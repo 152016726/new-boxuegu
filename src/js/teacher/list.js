@@ -1,5 +1,7 @@
 require('../common/aside.js');
 require('../common/header.js');
+require('../common/common.js');
+require('../common/loading.js');
 //获取列表功能
 $.get('/v6/teacher',function (data) {
     data.code==200&&$('#teacher-table').html(template('teacher-list-tem',data.result));
