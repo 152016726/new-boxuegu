@@ -35,7 +35,7 @@ $("#course-modal-edit3").ajaxForm({
         }
     }
 });
-//添加章节
+//添加章节回显信息
 $(document).on('click','#add_chapter',function () {
     $("#chapterModal").html(template("course-tem-edit3",{ct_cs_id:getSearch("cs_id")}));
 });
