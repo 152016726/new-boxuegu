@@ -54,10 +54,10 @@ $("#btn-logout").on("click",function () {
 var loadingImage='<div class="overlay">'+'<img src="/uploads/loading.gif"/>'+'</div>';
 $('body').append(loadingImage);
 $(document).on('ajaxStart',function () {
-    $('overlay').show();
+    $('.overlay').show();
 });
 $(document).on('ajaxStop',function () {
-    $('overlay').hide();
+    $('.overlay').hide();
 });
 },{}],5:[function(require,module,exports){
 require('./common/aside.js');
