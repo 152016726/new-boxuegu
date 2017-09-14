@@ -2,19 +2,19 @@
                    <!-- 摘要 -->
                     <ul class="forwards list-unstyled">
     <li>
-        <a href="./edit1.html?cs_id={{cs_id}}" class="active">
-            <b>1</b>
+        <a href="./edit1.html?cs_id={{cs_id}}" class="{{Eindex==1?'active':''}} {{Eindex>1?'done':''}}">
+            <b class="{{Eindex>1?'fa fa-check':''}}">{{Eindex>1?'':1}}</b>
             基本信息
         </a>
     </li>
     <li>
-        <a href="./edit2.html?cs_id={{cs_id}}" >
-            <b >2</b>
+        <a href="./edit2.html?cs_id={{cs_id}}" class="{{Eindex==2?'active':''}} {{Eindex>2?'done':''}}" >
+            <b class="{{Eindex>2?'fa fa-check':''}}">{{Eindex>2?'':2}}</b>
             课程图片
         </a>
     </li>
     <li>
-        <a href="./edit3.html?cs_id={{cs_id}}" >
+        <a href="./edit3.html?cs_id={{cs_id}}" class="{{Eindex==3?'active':''}} ">
             <b>3</b>
             课时管理
         </a>
@@ -130,80 +130,4 @@
                   </form>
               </div>
           </div>
-      </div>
-
-
-
-
-
-
-
-        <!--<div class="modal-dialog" style="width: 800px;">-->
-            <!--<div class="modal-content">-->
-                <!--<div class="modal-header">-->
-                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                    <!--<h4 class="modal-title">{{ct_id?"编辑课时":"添加课时"}}</h4>-->
-                <!--</div>-->
-                <!--<div class="modal-body">-->
-                    <!--<form action="{{ct_id?'/v6/course/chapter/modify':'/v6/course/chapter/add'}}"-->
-                    <!--method="post" id="course-modal-edit3" class="form-horizontal">-->
-                        <!--<input type="hidden" name="{{ct_id?'ct_id':'ct_cs_id'}}" value="{{ct_id?ct_id:ct_cs_id}}" >-->
-
-                        <!--<div class="form-group">-->
-                            <!--<label for="" class="col-xs-2 control-label">课程</label>-->
-                            <!--<div class="col-xs-6">-->
-                                <!--<input type="text" name="ct_name" value="{{ct_name}}" class="form-control input-sm">-->
-                            <!--</div>-->
-                            <!--<div class="col-xs-2"-->
-                                <!--<div class="checkbox">-->
-                                    <!--<label>-->
-                                        <!--<input name="ct_is_free" type="checkbox"> 免费课时-->
-                                    <!--</label>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label for="" class="col-xs-2 control-label">简介</label>-->
-                            <!--<div class="col-xs-8">-->
-                                <!--<textarea name="ct_brief" rows="5" class="form-control input-sm">{{ct_brief}}</textarea>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label for="" class="col-xs-2 control-label">视频</label>-->
-                            <!--<div class="col-xs-8">-->
-                                <!--<div class="input-group">-->
-                                    <!--<input type="text" name="ct_video" value='{{ct_video}}' class="form-control input-sm" placeholder="支持优酷、土豆、腾讯、网易公开课的视频页面地址导入">-->
-                                    <!--<span class="input-group-btn">-->
-                                        <!--<button class="btn btn-success btn-sm">获取</button>-->
-                                    <!--</span>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group form-inline">-->
-                            <!--<label for="" class="col-xs-2 control-label">时长</label>-->
-                            <!--<div class="col-xs-8">-->
-                                <!--<input type="text" name="ct_minutes" value="{{ct_minutes}}" class="form-control input-sm small">-->
-                                <!--分-->
-                                <!--<input type="text" name="ct_seconds" value="{{ct_seconds}}" class="form-control input-sm small">-->
-                                <!--秒-->
-                                 <!--<p class="help-block">时长必须为整数。</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group form-inline">-->
-                            <!--<label for="" class="col-xs-2 control-label">建议学习时长</label>-->
-                            <!--<div class="col-xs-8">-->
-                                <!--<input type="text" name="ct_recommend_duration" value="{{ct_recommend_duration}}" class="form-control input-sm small">-->
-                                <!--小时-->
-                                 <!--<p class="help-block">（如未设置，则默认学习时长为视频时长3倍取整。）</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="modal-footer">-->
-                            <!--<button type="button" id="btn-link" class="btn btn-link btn-sm" data-dismiss="modal">取消</button>-->
-                            <!--<button type="submit" id="btn-success" class="btn btn-success btn-sm">{{ct_id?"编 辑":"添 加"}}  </button>-->
-                        <!--</div>-->
-                    <!--</form>-->
-
-                <!--</div>-->
-
-            <!--</div>-->
-        <!--</div>--></script><script src="../../js/course/edit3.js"></script></body></html>
+      </div></script><script src="../../js/course/edit3.js"></script></body></html>
