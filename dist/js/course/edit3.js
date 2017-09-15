@@ -167,8 +167,8 @@ function upLesson(ct_id) {
         lessons.splice(index,1,formArr);
     }
 
-    // $("#lesson-list").html(template('lesson-list-tpl',lessons));
-    $('.course-add').html(template("course-form-edit3",lessons));
+    $("#lesson-list").html(template('lesson-list-tpl',lessons));
+
 
 
     function getFormData(){
