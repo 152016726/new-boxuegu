@@ -12,6 +12,7 @@
   "dependencies": {
     "art-template": "^4.12.1",
     "bootstrap": "^3.3.7",
+    "ckeditor": "^4.7.3",
     "echarts": "^3.7.1",
     "font-awesome": "^4.7.0",
     "fundebug-javascript": "^0.3.0",
