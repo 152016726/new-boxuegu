@@ -51,10 +51,12 @@ var jsLibs = [
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/bootstrap/dist/js/bootstrap.min.js',
     'node_modules/jquery-form/dist/jquery.form.min.js',
-    "./node_modules/echarts/dist/echarts.min.js",
-    "./node_modules/nprogress/nprogress.js",
-    "./node_modules/jquery.cookie/jquery.cookie.js",
-    "./node_modules/nprogress/nprogress.js"
+    "node_modules/echarts/dist/echarts.min.js",
+    "node_modules/nprogress/nprogress.js",
+    "node_modules/jquery.cookie/jquery.cookie.js",
+    "node_modules/nprogress/nprogress.js",
+    "node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js",
+    "node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js"
 ];
 //合并第三方插件为一个
 gulp.task('jsLib',function () {

@@ -9,6 +9,7 @@ $.ajax({
         if(data.code=="200"){
             var html=template('teacher-profile-tpl',data.result);
             $(".teacher-profile").html(html);
+            initPlugin();
         }
     }
 })
@@ -25,3 +26,16 @@ $('#teacher-profile-form').ajaxForm({
         }
 });
 
+//所有的插件的初始化
+function initPlugin() {
+    $('input[name=tc_birthday]').datepicker({
+        language:'zh-CN',
+        format:'yyyy-mm-dd',
+        endDate:new Date('2017-9-16')
+    });
+    $('input[name=tc_join_date]').datepicker({
+        language:'zh-CN',
+        format:'yyyy-mm-dd',
+        endDate:new Date('2017-9-16')
+    });
+}
