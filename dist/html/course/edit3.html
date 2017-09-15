@@ -1,20 +1,25 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>学IT - 后台管理系统</title><script src="https://og6593g2z.qnssl.com/fundebug.0.2.0.min.js" apikey="a47ed3c0fa37e0533cfc67915604759fbfda1bf387836b3d37d9a2efc6a0ea28"></script><link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"><link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.css"><link rel="stylesheet" href="/dist/css/"><link rel="stylesheet" href="/dist/css/index.css"></head><body><div class="aside"><div class="profile"><div class="avatar img-circle"><img src="/images/default.png" id="avatar"></div><h4 id="monitar">布头儿</h4></div><div class="navs"><ul class="list-unstyled"><li><a href="/dist/"><i class="fa fa-home"></i> <span>仪表盘</span></a></li><li><a href="javascript:;"><i class="fa fa-bell"></i> <span>讲师管理</span> <i class="arrow fa fa-angle-right"></i></a><ul class="list-unstyled"><li><a href="/dist/html/teacher/add.html">添加讲师</a></li><li><a href="/dist/html/teacher/list.html">讲师列表</a></li></ul></li><li><a href="javascript:;"><i class="fa fa-cog"></i> <span>学科管理</span> <i class="arrow fa fa-angle-right"></i></a><ul class="list-unstyled"><li><a href="/dist/html/category/add.html">添加学科</a></li><li><a href="/dist/html/category/list.html">学科列表</a></li></ul></li><li><a href="javascript:;"><i class="fa fa-cog"></i> <span>课程管理</span> <i class="arrow fa fa-angle-right"></i></a><ul class="list-unstyled"><li><a href="/dist/html/course/add.html">添加课程</a></li><li><a href="/dist/html/course/list.html">课程列表</a></li></ul></li></ul></div></div><div class="main"><div class="container-fluid"><div class="header"><nav class="navbar navbar-custom"><div class="navbar-header"><a href="javascript:;" class="navbar-brand"><i class="fa fa-navicon"></i></a></div><ul class="nav navbar-nav navbar-right"><li><a href="/dist/html/user/profile.html"><i class="fa fa-user"></i> 个人中心</a></li><li><a id="btn-logout" href="javascript:;"><i class="fa fa-sign-out"></i> 退出</a></li></ul></nav></div><div class="body course-add"><ol class="breadcrumb"><li><a href="javascript:;">课程管理</a></li><li class="active">课程添加</li></ol></div></div></div><div class="modal fade" id="chapterModal"></div><script src="../../js/lib.js"></script><script type="text/tem" id="course-form-edit3"><div class="steps">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>学IT - 后台管理系统</title><script src="https://og6593g2z.qnssl.com/fundebug.0.2.0.min.js" apikey="a47ed3c0fa37e0533cfc67915604759fbfda1bf387836b3d37d9a2efc6a0ea28"></script><link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"><link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.css"><link rel="stylesheet" href="/dist/css/"><link rel="stylesheet" href="/dist/css/index.css"></head><body><div class="aside"><div class="profile"><div class="avatar img-circle"><img src="/images/default.png" id="avatar"></div><h4 id="monitar">布头儿</h4></div><div class="navs"><ul class="list-unstyled"><li><a href="/dist/"><i class="fa fa-home"></i> <span>仪表盘</span></a></li><li><a href="javascript:;"><i class="fa fa-bell"></i> <span>讲师管理</span> <i class="arrow fa fa-angle-right"></i></a><ul class="list-unstyled"><li><a href="/dist/html/teacher/add.html">添加讲师</a></li><li><a href="/dist/html/teacher/list.html">讲师列表</a></li></ul></li><li><a href="javascript:;"><i class="fa fa-cog"></i> <span>学科管理</span> <i class="arrow fa fa-angle-right"></i></a><ul class="list-unstyled"><li><a href="/dist/html/category/add.html">添加学科</a></li><li><a href="/dist/html/category/list.html">学科列表</a></li></ul></li><li><a href="javascript:;"><i class="fa fa-cog"></i> <span>课程管理</span> <i class="arrow fa fa-angle-right"></i></a><ul class="list-unstyled"><li><a href="/dist/html/course/add.html">添加课程</a></li><li><a href="/dist/html/course/list.html">课程列表</a></li></ul></li></ul></div></div><div class="main"><div class="container-fluid"><div class="header"><nav class="navbar navbar-custom"><div class="navbar-header"><a href="javascript:;" class="navbar-brand"><i class="fa fa-navicon"></i></a></div><ul class="nav navbar-nav navbar-right"><li><a href="/dist/html/user/profile.html"><i class="fa fa-user"></i> 个人中心</a></li><li><a id="btn-logout" href="javascript:;"><i class="fa fa-sign-out"></i> 退出</a></li></ul></nav></div><div class="body course-add"></div></div></div><div class="modal fade" id="chapterModal"></div><script src="../../js/lib.js"></script><script type="text/tem" id="course-form-edit3"><div class="steps">
+        <!-- 面包屑 -->
+                <ol class="breadcrumb">
+                    <li><a href="javascript:;">课程管理</a></li>
+                    <li class="active">课程添加</li>
+                </ol>
                    <!-- 摘要 -->
                     <ul class="forwards list-unstyled">
     <li>
-        <a href="./edit1.html?cs_id={{cs_id}}" class="active">
-            <b>1</b>
+        <a href="./edit1.html?cs_id={{cs_id}}" class="{{Eindex==1?'active':''}} {{Eindex>1?'done':''}}">
+            <b class="{{Eindex>1?'fa fa-check':''}}">{{Eindex>1?'':1}}</b>
             基本信息
         </a>
     </li>
     <li>
-        <a href="./edit2.html?cs_id={{cs_id}}" >
-            <b >2</b>
+        <a href="./edit2.html?cs_id={{cs_id}}" class="{{Eindex==2?'active':''}} {{Eindex>2?'done':''}}">
+            <b class="{{Eindex>2?'fa fa-check':''}}">{{Eindex>2?'':2}}</b>
             课程图片
         </a>
     </li>
     <li>
-        <a href="./edit3.html?cs_id={{cs_id}}" >
+        <a href="./edit3.html?cs_id={{cs_id}}" class="{{Eindex==3?'active':''}}" >
             <b>3</b>
             课时管理
         </a>
@@ -43,11 +48,11 @@
                             </a>
                         </div>
                         <div class="lessons">
-                            <ul class="list-unstyled">
+                            <ul id="lesson-list"  class="list-unstyled">
                             {{each lessons}}
                                 <li>
                                     <i class="fa fa-file-video-o"></i>
-                                    <span class="order">课时：{{$value.ct_id}}</span>
+                                    <span class="order">课时：{{$index+1}}</span>
                                     <span class="name">{{$value.ct_name}}</span>
                                     <span class="duration">{{$value.ct_video_duration}}</span>
                                     <!-- 操作 -->
@@ -80,7 +85,7 @@
                           <div class="col-xs-2">
                               <div class="checkbox">
                                   <label>
-                                      <input name="ct_is_free" type="checkbox" {{ ct_is_free == 1? 'checked': '' }}> 免费课时
+                                      <input name="ct_is_free" id="ct_is_free" type="checkbox" value="1" {{ ct_is_free == 1? 'checked': '' }}> 免费课时
                                   </label>
                               </div>
                           </div>
@@ -130,4 +135,16 @@
                   </form>
               </div>
           </div>
-      </div></script><script src="../../js/course/edit3.js"></script></body></html>
+      </div></script><script type="text/teml" id="lesson-list-tpl">{{each $data}}
+                                <li>
+                                    <i class="fa fa-file-video-o"></i>
+                                    <span class="order">课时：{{$index+1}}</span>
+                                    <span class="name">{{$value.ct_name}}</span>
+                                    <span class="duration">{{$value.ct_video_duration}}</span>
+                                    <!-- 操作 -->
+                                    <div class="action pull-right">
+                                        <a href="#chapterModal" id="btn-info" class="btn btn-info btn-xs" data-id="{{$value.ct_id}}" data-toggle="modal" data-target="#chapterModal">编辑</a>
+                                        <a href="javascript:;" id="btn-danger" class="btn btn-danger btn-xs">删除</a>
+                                    </div>
+                                </li>
+                {{/each}}</script><script src="../../js/course/edit3.js"></script></body></html>

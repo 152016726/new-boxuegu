@@ -11,7 +11,6 @@ var user=localStorage.getItem('userInfo')?JSON.parse(localStorage.getItem('userI
 var tc_names=localStorage.getItem('userInfo')?JSON.parse(localStorage.getItem('userInfo')).tc_name:'';
 $('#avatar').attr('src',user);
 $('#monitar').text(tc_names);
-console.log(user);
 
 // 下拉列表
 $('.navs a').on('click', function () {

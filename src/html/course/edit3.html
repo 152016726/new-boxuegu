@@ -17,11 +17,7 @@
             <!--build:header-->
             <!--endbuild-->
             <div class="body course-add">
-                <!-- 面包屑 -->
-                <ol class="breadcrumb">
-                    <li><a href="javascript:;">课程管理</a></li>
-                    <li class="active">课程添加</li>
-                </ol>
+
 
             </div>
         </div>
@@ -34,6 +30,11 @@
     <script src="../../js/lib.js"></script>
     <script type="text/tem" id="course-form-edit3">
         <div class="steps">
+        <!-- 面包屑 -->
+                <ol class="breadcrumb">
+                    <li><a href="javascript:;">课程管理</a></li>
+                    <li class="active">课程添加</li>
+                </ol>
                    <!-- 摘要 -->
                     <!--build:courseEditAside-->
                     <!--endbuild-->
@@ -50,11 +51,11 @@
                             </a>
                         </div>
                         <div class="lessons">
-                            <ul class="list-unstyled">
+                            <ul id="lesson-list"  class="list-unstyled">
                             {{each lessons}}
                                 <li>
                                     <i class="fa fa-file-video-o"></i>
-                                    <span class="order">课时：{{$value.ct_id}}</span>
+                                    <span class="order">课时：{{$index+1}}</span>
                                     <span class="name">{{$value.ct_name}}</span>
                                     <span class="duration">{{$value.ct_video_duration}}</span>
                                     <!-- 操作 -->
@@ -90,7 +91,7 @@
                           <div class="col-xs-2">
                               <div class="checkbox">
                                   <label>
-                                      <input name="ct_is_free" type="checkbox" {{ ct_is_free == 1? 'checked': '' }}> 免费课时
+                                      <input name="ct_is_free" id="ct_is_free" type="checkbox" value="1" {{ ct_is_free == 1? 'checked': '' }}> 免费课时
                                   </label>
                               </div>
                           </div>
@@ -141,6 +142,21 @@
               </div>
           </div>
       </div>
+    </script>
+    <script type="text/teml" id="lesson-list-tpl">
+                {{each $data}}
+                                <li>
+                                    <i class="fa fa-file-video-o"></i>
+                                    <span class="order">课时：{{$index+1}}</span>
+                                    <span class="name">{{$value.ct_name}}</span>
+                                    <span class="duration">{{$value.ct_video_duration}}</span>
+                                    <!-- 操作 -->
+                                    <div class="action pull-right">
+                                        <a href="#chapterModal" id="btn-info" class="btn btn-info btn-xs" data-id="{{$value.ct_id}}" data-toggle="modal" data-target="#chapterModal">编辑</a>
+                                        <a href="javascript:;" id="btn-danger" class="btn btn-danger btn-xs">删除</a>
+                                    </div>
+                                </li>
+                {{/each}}
     </script>
     <script src="../../js/course/edit3.js"></script>
 </body>

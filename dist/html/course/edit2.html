@@ -2,19 +2,19 @@
                     <!-- 摘要 -->
                     <ul class="forwards list-unstyled">
     <li>
-        <a href="./edit1.html?cs_id={{cs_id}}" class="active">
-            <b>1</b>
+        <a href="./edit1.html?cs_id={{cs_id}}" class="{{Eindex==1?'active':''}} {{Eindex>1?'done':''}}">
+            <b class="{{Eindex>1?'fa fa-check':''}}">{{Eindex>1?'':1}}</b>
             基本信息
         </a>
     </li>
     <li>
-        <a href="./edit2.html?cs_id={{cs_id}}" >
-            <b >2</b>
+        <a href="./edit2.html?cs_id={{cs_id}}" class="{{Eindex==2?'active':''}} {{Eindex>2?'done':''}}">
+            <b class="{{Eindex>2?'fa fa-check':''}}">{{Eindex>2?'':2}}</b>
             课程图片
         </a>
     </li>
     <li>
-        <a href="./edit3.html?cs_id={{cs_id}}" >
+        <a href="./edit3.html?cs_id={{cs_id}}" class="{{Eindex==3?'active':''}}" >
             <b>3</b>
             课时管理
         </a>
