@@ -2,17 +2,13 @@ require('../common/aside.js');
 require('../common/header.js');
 require('../common/common.js');
 require('../common/loading.js');
-$.ajax({
-    type:'get',
-    url:'/v6/teacher/profile',
-    success:function (data) {
-        if(data.code=="200"){
-            var html=template('teacher-profile-tpl',data.result);
-            $(".teacher-profile").html(html);
-            initPlugin();
-        }
+$.get('/v6/teacher/profile',function (data) {
+    if(data.code=="200"){
+        var html=template('teacher-profile-tpl',data.result);
+        $(".teacher-profile").html(html);
+        initPlugin();
     }
-})
+});
 $('#teacher-profile-form').ajaxForm({
         // 事件委托获取动态元素
         delegation:true,
@@ -48,4 +44,23 @@ function initPlugin() {
         width:600,
         skin:"kama"
     });
+    //上传图片
+    $('#upfile').uploadify({
+        swf: '/lib/jquery-uploadify/uploadify.swf',
+        uploader: '/v6/uploader/avatar',
+        fileTypeExts: '*.gif; *.jpg; *.png',
+        fileObjName:'tc_avatar',
+        onUploadSuccess:function (file,dataArr) {
+            var data=JSON.parse(dataArr);
+            $.post('/v6/uploader/avatar',data,function (data) {
+                if(data.code==200){
+                    $('.preview img').attr('src',data.result.path);
+                }
+            });
+        }
+    });
 }
+
+$(document).on('mouseover','#upfile-button',function () {
+    $('#uploadify').removeClass('uploadify-queue').text("");
+})

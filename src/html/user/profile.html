@@ -26,7 +26,7 @@
 <!-- 讲师个人信息模版 -->
 <script id="teacher-profile-tpl" type="text/tpl">
         <div class="settings">
-            <form action="/v6/teacher/modify" method="get" enctype="multipart/form-data" id="teacher-profile-form" class="form-horizontal">
+            <form action="/v6/teacher/modify" method="post" enctype="multipart/form-data" id="teacher-profile-form" class="form-horizontal">
             <input type="hidden" name="tc_id" value="{{tc_id}}" >
                 <div class="form-group">
                     <label for="" class="col-xs-3 control-label">姓名</label>
@@ -105,7 +105,6 @@
                 <div class="form-group">
                     <label for="" class="col-xs-3 control-label">个人介绍</label>
                     <div class="col-xs-5 ckeditor">
-                                                                                               //加入@能够编译html标签
                         <textarea name="tc_introduce" id="introduce" rows="15" class="form-control input-sm">{{@ tc_introduce }}</textarea>
                     </div>
                 </div>
